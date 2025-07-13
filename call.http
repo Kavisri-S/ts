@@ -1,0 +1,54 @@
+@auth = http://localhost:3000/auth
+###
+POST {{auth}}/signin
+Content-Type: application/json
+
+
+{
+    "username": "Dharshan",
+    "password": "Dharshan@123"
+}
+###
+POST {{auth}}/signup
+Content-Type: application/json
+ 
+{
+    "username": "Dharshan",
+    "password": "Dharshan@123"
+}
+###
+POST {{auth}}/signup
+Content-Type: application/json
+
+{
+    "username": "kavishri",
+    "password": "Dharshan@123",
+    "role": "admin"
+}
+###
+POST {{auth}}/signin
+Content-Type: application/json
+
+{
+    "username": "kavishri",
+    "password": "Dharshan@123"
+    
+}
+###
+@base = http://localhost:3000/ticket
+###
+POST {{base}}/create
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiRGhhcnNoYW4iLCJpYXQiOjE3NTE4NjI0NzAsImV4cCI6MTc1MTg2NjA3MH0.s6FtF7CpPMsk5uVixA8hwjZ773AdI_d7jIyDvV9tOJ4
+Content-Type: application/json  
+
+{
+    "ticketId": "1",
+    "userId": "Dharshan1",
+    "status": "open"
+}
+###
+GET {{base}}/view
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoia2F2aXNocmkiLCJpYXQiOjE3NTE2MDY0MTYsImV4cCI6MTc1MTYxMDAxNn0.ylZmIYucaFYNDmzi8IV5mvlfjYpzIsqhhCrRrvekt7k
+###
+DELETE {{base}}/delete  
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoia2F2aXNocmkiLCJpYXQiOjE3NTE2MDcwOTUsImV4cCI6MTc1MTYxMDY5NX0.g-tO3MFMYCDfrCBC2kLF3u5htNUHQnwtcw5QF-THdC8
